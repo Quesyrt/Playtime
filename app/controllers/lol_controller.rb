@@ -25,8 +25,8 @@ class LolController < ApplicationController
         
         @mlastweek = select_lastweek(@matchs) #last eek matches
         
-        @total_lastweek_secondes = @mlastweek.count * 3600
-        @lastweek_time = Time.at(add_durations(@mlastweek)).utc.strftime("%H heures, %M minutes") # same to h/m/s
+        @total_lastweek_secondes = @mlastweek.count * 1958
+        @lastweek_time = Time.at(@total_lastweek_secondes).utc.strftime("%H heures, %M minutes") # remplacer total lastweek seconds par add durations si api key de ouf
         
         @weeksmic = @total_lastweek_secondes/3600.round(2)*9.88.round(2)
     end
