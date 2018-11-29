@@ -14,6 +14,7 @@ class LolController < ApplicationController
         
         @total_hier_secondes = add_durations(@mhier) #adding durations of yesterday's matches
         @hier_time = Time.at(add_durations(@mhier)).utc.strftime("%H heures, %M minutes, et %S secondes") #same, converted to hours/minutes/seconds
+        @hiersmic = @total_hier_secondes/3600.round(2)*9.88
     end
     
     def week 
@@ -27,7 +28,7 @@ class LolController < ApplicationController
         @total_lastweek_secondes = @mlastweek.count * 3600
         @lastweek_time = Time.at(add_durations(@mlastweek)).utc.strftime("%H heures, %M minutes") # same to h/m/s
         
-        @weeksmic = @total_lastweek_secondes/3600*9.88
+        @weeksmic = @total_lastweek_secondes/3600.round(2)*9.88.round(2)
     end
     
     private
