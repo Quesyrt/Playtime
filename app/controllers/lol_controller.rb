@@ -2,7 +2,7 @@ class LolController < ApplicationController
     require 'net/http'
     require 'json'
     require 'date'
-    $API_KEY = "RGAPI-1e0f5031-595f-4a99-8fc9-09b3f22a5b17"
+    $API_KEY = "RGAPI-f7dae409-9cd9-4771-8497-eac91ca63d88"
     
     def home # Contains variables for the view
         uri = URI("https://euw1.api.riotgames.com/lol/match/v3/matchlists/by-account/32487406?api_key=#{$API_KEY}")
